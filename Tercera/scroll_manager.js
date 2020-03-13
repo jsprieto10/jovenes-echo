@@ -21,9 +21,11 @@ function cambiar_pos_directamente(targetId) {
 function subir_scroll() {
     //wait_im_scrolling = true;
 
-    act_sect = Math.max(0, act_sect-1);
+    act_sect = 0
 
-    d3.select("#titulo_footer").text("Tercer Encuentro: Tres primeras acciones");
+    
+    d3.select("#titulo_footer").text("Tercer Encuentro: ¿Qué quiero hacer?");
+   
 
 
     $('#sect' + (act_sect)).css('visibility', 'visible');
@@ -36,8 +38,8 @@ function subir_scroll() {
 function bajar_scroll(){
 
 
-    act_sect = 1
-    d3.select("#titulo_footer").text("Tercer Encuentro: ¿Qué quiero hacer?");
+    act_sect = 1;
+    d3.select("#titulo_footer").text("Tercer Encuentro: Tres primeras acciones");
 
     $('#sect' + (act_sect)).css('visibility', 'visible');
     $('html, body').animate({

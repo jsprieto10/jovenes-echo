@@ -75,7 +75,7 @@ var profundidad_2 = `
                 <h1 style="color: white; font-size: 200%; line-height: 1.5" id="percent_meta_2">100%</h1>
             </div>
             <div class="row" style="height: 10%; ">
-                <h2 style="color: white; line-height:4vh; font-size: 150%" id="nombre_meta">Meta 11.3</h2>
+                <h2 style="color: white; line-height:4vh; font-size: 150%" id="nombre_meta_2">Meta 11.3</h2>
             </div>
             <div class="row" style="height: 50%; ">
                 <div class="col-12" style="height: 100%; padding-left: 0">
