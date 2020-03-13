@@ -34,110 +34,6 @@ function dibujar_sunburst(data) {
     //def titulo
     var titulo_src = "assets/pregunta-medellin.svg";
 
-
-    //hombres
-    if (
-        params["mayor_hombre"] &&
-        !params["mayor_mujer"] &&
-        params["adulto_hombre"] &&
-        !params["adulto_mujer"] &&
-        params["joven_hombre"] &&
-        !params["joven_mujer"]) titulo_src = "assets/p1-h.svg"
-
-    //mujeres
-    else if (
-        !params["mayor_hombre"] &&
-        params["mayor_mujer"] &&
-        !params["adulto_hombre"] &&
-        params["adulto_mujer"] &&
-        !params["joven_hombre"] &&
-        params["joven_mujer"]) titulo_src = "assets/p1-m.svg"
-
-    //mayores
-    else if (
-        params["mayor_hombre"] &&
-        params["mayor_mujer"] &&
-        !params["adulto_hombre"] &&
-        !params["adulto_mujer"] &&
-        !params["joven_hombre"] &&
-        !params["joven_mujer"]) titulo_src = "assets/p1-h-m-am.svg"
-
-    //adultos
-    else if (
-        !params["mayor_hombre"] &&
-        !params["mayor_mujer"] &&
-        params["adulto_hombre"] &&
-        params["adulto_mujer"] &&
-        !params["joven_hombre"] &&
-        !params["joven_mujer"]) titulo_src = "assets/p1-h-m-a.svg"
-
-    //jovenes 
-    else if (
-        !params["mayor_hombre"] &&
-        !params["mayor_mujer"] &&
-        !params["adulto_hombre"] &&
-        !params["adulto_mujer"] &&
-        params["joven_hombre"] &&
-        params["joven_mujer"]) titulo_src = "assets/p1-h-m-j.svg"
-
-    //hombres mayores
-    else if (
-        params["mayor_hombre"] &&
-        !params["mayor_mujer"] &&
-        !params["adulto_hombre"] &&
-        !params["adulto_mujer"] &&
-        !params["joven_hombre"] &&
-        !params["joven_mujer"]) titulo_src = "assets/p1-h-am.svg"
-
-    //hombres adultos
-    else if (
-        !params["mayor_hombre"] &&
-        !params["mayor_mujer"] &&
-        params["adulto_hombre"] &&
-        !params["adulto_mujer"] &&
-        !params["joven_hombre"] &&
-        !params["joven_mujer"]) titulo_src = "assets/p1-h-a.svg"
-
-    //hombres jovenes
-    else if (
-        !params["mayor_hombre"] &&
-        !params["mayor_mujer"] &&
-        !params["adulto_hombre"] &&
-        !params["adulto_mujer"] &&
-        params["joven_hombre"] &&
-        !params["joven_mujer"]) titulo_src = "assets/p1-h-j.svg"
-
-
-    //mujeres mayores
-    else if (
-        !params["mayor_hombre"] &&
-        params["mayor_mujer"] &&
-        !params["adulto_hombre"] &&
-        !params["adulto_mujer"] &&
-        !params["joven_hombre"] &&
-        !params["joven_mujer"]) titulo_src = "assets/p1-m-am.svg"
-
-    //mujeres adultos
-    else if (
-        !params["mayor_hombre"] &&
-        !params["mayor_mujer"] &&
-        !params["adulto_hombre"] &&
-        params["adulto_mujer"] &&
-        !params["joven_hombre"] &&
-        !params["joven_mujer"]) titulo_src = "assets/p1-m-a.svg"
-
-    //mujeres jovenes
-    else if (
-        !params["mayor_hombre"] &&
-        !params["mayor_mujer"] &&
-        !params["adulto_hombre"] &&
-        !params["adulto_mujer"] &&
-        !params["joven_hombre"] &&
-        params["joven_mujer"]) titulo_src = "assets/p1-m-j.svg"
-
-
-
-
     //d3.select("#titulo_primera_pregunta").attr("src", titulo_src)
     //fin def 
 
@@ -180,9 +76,10 @@ function dibujar_sunburst(data) {
     var partition = data => {
         escala = d3.scalePow().exponent(0.75);
         const root = d3.hierarchy(data)
-            .sum(d => escala(d.value))
+            .sum(d => d.value)
             //.sum(d => d.value)
             .sort((a, b) => b.value - a.value);
+
         return d3.partition()
             .size([2 * Math.PI, root.height + 1])
             (root);
@@ -199,9 +96,9 @@ function dibujar_sunburst(data) {
             (root2);
     }
 
-    color_sunburst = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1))
+    var color_sunburst = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1))
     var root = partition(data);
-    root2 = partition2(data);
+    var root2 = partition2(data);
     root.each(d => d.current = d);
     root2.each(d => d.current = d);
 
@@ -241,6 +138,7 @@ function dibujar_sunburst(data) {
     path.filter(d => d.children).on("click", clicked);
 
     path.filter(d => !d.children).on("mouseover", meta_over)
+    console.log("holaa");
     path.append("title")
         .text(d => `${d.ancestors().map(d => d.data.name).reverse().join("/")}\n${format(d.value)}`);
 
@@ -271,6 +169,7 @@ function dibujar_sunburst(data) {
 
     (_ => {
         //$("#sera_que_es_este").append(profundidad_1);
+        console.log("hola");
         max_ods_sun = root2.children[0];
         root2.children.forEach(element => {
             if (element.value > max_ods_sun.value)
@@ -664,6 +563,7 @@ function dibujar_sunburst(data) {
             $("#sera_que_es_este").append(profundidad_1);
 
             (_ => {
+                console.log("hola")
                 max_ods_sun = root2.children[0];
                 root2.children.forEach(element => {
                     if (element.value > max_ods_sun.value)

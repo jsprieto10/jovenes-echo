@@ -23,7 +23,7 @@ function subir_scroll() {
 
     act_sect = Math.max(0, act_sect-1);
 
-    d3.select("#titulo_footer").text("Segundo Encuentro: Retos");
+    d3.select("#titulo_footer").text("Tercer Encuentro: Tres primeras acciones");
 
 
     $('#sect' + (act_sect)).css('visibility', 'visible');
@@ -37,7 +37,7 @@ function bajar_scroll(){
 
 
     act_sect = 1
-    d3.select("#titulo_footer").text("Segundo Encuentro: Propuestas");
+    d3.select("#titulo_footer").text("Tercer Encuentro: ¿Qué quiero hacer?");
 
     $('#sect' + (act_sect)).css('visibility', 'visible');
     $('html, body').animate({
