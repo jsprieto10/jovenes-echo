@@ -19,7 +19,7 @@ postData(urlBack+'sunburst3', req_sun_inic).then(data => {
     
     
     dibujar_sunburst(data);
-    d3.select('#testimonio_sun').text(testimonios_medellin[0]);
+    //d3.select('#testimonio_sun').text(testimonios_medellin[0]);
     avisar();
 });
 
@@ -541,6 +541,7 @@ function dibujar_sunburst(data) {
             const pata = { ...req };
             pata.ods = [max_meta.parent.data.name];
             pata.respuesta=0;
+            /*
             postData(urlBack+'historias3/1', pata).then(testimonio => {
                 
 
@@ -550,6 +551,7 @@ function dibujar_sunburst(data) {
                 testimonios_cargados_medellin = true;
                 d3.select('#testimonio_sun').text(testimonio[0] != undefined ? testimonio[0].respuesta + "." : testimonios_medellin[1])
             });
+            */
         }
 
         if (p.data.name == "ODS" && nivel_profundidad == 2) {

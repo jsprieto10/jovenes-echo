@@ -544,6 +544,7 @@ function dibujar_sunburst_2(data) {
             const pata = { ...req };
             pata.ods = [max_meta.parent.data.name];
             pata.respuesta=1;
+            /*
             postData(urlBack+'historias2/1', pata).then(testimonio => {
                 
 
@@ -553,6 +554,7 @@ function dibujar_sunburst_2(data) {
                 testimonios_cargados_medellin_2 = true;
                 d3.select('#testimonio_sun_2').text(testimonio[0] != undefined ? testimonio[0].respuesta + "." : testimonios_medellin_2[1])
             });
+            */
         }
 
         if (p.data.name == "ODS" && nivel_profundidad_2 == 2) {

@@ -19,7 +19,7 @@ postData(urlBack+'sunburst1', req_sun_inic).then(data => {
     
     
     dibujar_sunburst(data);
-    d3.select('#testimonio_sun').text(testimonios_medellin[0]);
+    //d3.select('#testimonio_sun').text(testimonios_medellin[0]);
     avisar();
 });
 
@@ -643,6 +643,7 @@ function dibujar_sunburst(data) {
             const pata = { ...req };
             pata.ods = [max_meta.parent.data.name];
             pata.respuesta=0
+            /*
             postData(urlBack+'historias1/1', pata).then(testimonio => {
                 
 
@@ -652,6 +653,7 @@ function dibujar_sunburst(data) {
                 testimonios_cargados_medellin = true;
                 d3.select('#testimonio_sun').text(testimonio[0] != undefined ? testimonio[0].respuesta + "." : testimonios_medellin[1])
             });
+            */
         }
 
         if (p.data.name == "ODS" && nivel_profundidad == 2) {
@@ -672,7 +674,7 @@ function dibujar_sunburst(data) {
 
 
                 sdg_bur_id = max_ods_sun.data.name.split("_")[1].padStart(2,'0');;
-                d3.select('#imagen_ods_sun').attr('src', sdg_img_repo + sdg_bur_id + (sdg_bur_id == 10 ? "-1" : "") + ".jpg").attr("opacity", 0).transition().delay(1000).duration(1000).attr("opacity", 1);
+                d3.select('#imagen_ods_sun').attr('src', sdg_img_repo + sdg_bur_id + ".jpg").attr("opacity", 0).transition().delay(1000).duration(1000).attr("opacity", 1);
                 per = max_ods_sun.value;
                 perc = (100 / root2.value) * per;
                 val_to_show = perc < 1 ? perc.toPrecision(1) : perc < 10 ? perc.toPrecision(2) : perc.toFixed(0);
