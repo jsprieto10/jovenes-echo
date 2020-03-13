@@ -176,7 +176,7 @@ function dibujar_sunburst(data) {
         });
 
 
-        sdg_bur_id = max_ods_sun.data.name.split("_")[1];
+        sdg_bur_id = max_ods_sun.data.name.split("_")[1].padStart(2,'0');;
         if (sdg_bur_id.length < 2)
             sdg_bur_id = "0" + sdg_bur_id
         d3.select('#imagen_ods_sun').attr('src', sdg_img_repo + sdg_bur_id + ".jpg").attr("opacity", 0).transition().delay(1000).duration(1000).attr("opacity", 1);
@@ -570,7 +570,7 @@ function dibujar_sunburst(data) {
                 });
 
 
-                sdg_bur_id = max_ods_sun.data.name.split("_")[1];
+                sdg_bur_id = max_ods_sun.data.name.split("_")[1].padStart(2,'0');;
                 d3.select('#imagen_ods_sun').attr('src', sdg_img_repo + sdg_bur_id + (sdg_bur_id == 10 ? "-1" : "") + ".jpg").attr("opacity", 0).transition().delay(1000).duration(1000).attr("opacity", 1);
                 per = max_ods_sun.value;
                 perc = (100 / root2.value) * per;
