@@ -8,7 +8,7 @@ var profundidad_1 = `
     <div id="2r" class="row" style="height: 30%">
 
     </div>
-    <div id="3r" class="row" style="height: 15%"></div>
+    <div id="3r" class="row" style="height: 12%"></div>
     <div id="4_y_5r" class="row" style="height: 41%">
         <div class="col-6" style="height: 100%">
             <div id="4r" class="row" style="height: 30%; ">
