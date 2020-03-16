@@ -1,7 +1,8 @@
 var profundidad_1 = `
 <div id="quitame" style="height: 100%; width: 100%">
-    <div style="position: absolute; width: 30vw; top: 40px; left: 0;">
-    <h2 id="barrio-h" style="font-size: 3rem;">Gran Conversación Nacional: <span style="color:#f48633;">Jóvenes<span></h2>
+    <div style="position: absolute; width: 40vw; top: 40px; left: 0;">
+    <h2 id="barrio-h" style="font-size: 2rem;">Gran Conversación Nacional: <span style="color:#f48633;">Jóvenes<span></h2>
+    <p>Primera Mesa Sectorial de Jóvenes. 13/01/2020. Realizada en la Universidad del Rosario- Bogotá, Colombia. Participación de aprox.200 jóvenes y altos funcionarios del gobierno nacional, organizados en 14 mesas de trabajo con representación de jóvenes de más de 20 regiones del país, más de 20 departamentos, representando distintas tendencias políticas, causas, y grupos de minorías. Un total de 998 retos y problemáticas recolectados</p>
     </div>
     <div id="2r" class="row" style="height: 30%">
 

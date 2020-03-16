@@ -1,7 +1,9 @@
 var profundidad_1 = `
 <div id="quitame" style="height: 100%; width: 100%">
-    <div style="position: absolute; width: 30vw; top: 40px; left: 0;">
-    <h2 id="barrio-h" style="font-size: 3rem;">Gran Conversación Nacional: <span style="color:#f48633;">Jóvenes<span></h2>
+    <div style="position: absolute; width: 40vw; top: 40px; left: 0;">
+    <h2 id="barrio-h" style="font-size: 2rem;">Gran Conversación Nacional: <span style="color:#f48633;">Jóvenes<span></h2>
+    <p>Propuestas y respuestas recibidas a través de la plataforma virtual www.conversacionnacional.gov.co, a corte de 25/02/2020. Recibidas 1.266 propuestas y respuestas relacionadas  con jóvenes en Colombia.</p>
+
     </div>
     <div id="2r" class="row" style="height: 30%">
 
